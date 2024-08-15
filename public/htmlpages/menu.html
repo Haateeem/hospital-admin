@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/d-style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <script>
+        (function () {
+            var menuState = localStorage.getItem('menuState');
+            if (menuState === 'open') {
+                document.write('<style>#side-menu { width: 16%; }</style>');
+                console.log("menu status: onn");
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- JQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/dashboard.js"></script>
+
+    <div class="dash-menu">
+
+        <div class="brand-div">
+            <img class="brand-logo" src="../images/medicine.png" alt="Logo" height="30px">
+            <p>Admin Dashboard</p>
+        </div>
+
+        <div class="profile-panel">
+            <img id="display-picture" src="../images/hatim.png" alt="" height="100px">
+            <p class="profile-name">Hatim Haider Ali</p>
+            <p class="profile-designation">Admin</p>
+        </div>
+        <button onclick="home()" class="menu-btn" data-function="home">
+            <img src="../images/home-icon.png" alt="" height="20px">Dashboard
+        </button>
+        <button onclick="doctors()" class="menu-btn" data-function="doctors"><img src="../images/doctor.svg" alt=""
+                height="20px">Doctor</button>
+        <button onclick="patients()" class="menu-btn" data-function="patients"><img src="../images/patient.png" alt=""
+                height="20px">Patient</button>
+        <button onclick="appointment()" class="menu-btn" data-function="appointment"><img
+                src="../images/appointments.svg" alt="" height="20px">Appointment</button>
+        <button onclick="pharmacy()" class="menu-btn" data-function="pharmacy"><img src="../images/pharmacy.png" alt=""
+                height="20px">Pharmacy</button>
+        <button class="" onclick="loadSettingsModal()">
+            <img src="../images/settings.png" alt="" height="20px">Settings
+        </button>
+        <button>
+            <img src="../images/theme.png" alt="" height="20px">
+            Dark Mode
+            <div class="form-check form-switch">
+                <input class="form-check-input check d-mode" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    onchange="toggleTheme()">
+            </div>
+        </button>
+    </div>
+
+
+    <script src="../js/menu.js"> </script>
+</body>
+
+</html>

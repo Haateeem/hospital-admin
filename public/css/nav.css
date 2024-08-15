@@ -1,0 +1,112 @@
+.navbar {
+    padding: 0;
+    margin: 0;
+}
+
+.nav_custom {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 1%;
+}
+
+.menu-btn {
+    border: none;
+    background: transparent;
+    transition: 0.1s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.menu-btn img {
+
+    height: 30px;
+}
+
+.nav_right {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+}
+
+.admin-profile {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+    display: none;
+    /* Initially hide the panel */
+    z-index: 9999;
+}
+
+.admin-profile h2 {
+    color: #343a40;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.admin-profile p {
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.admin-profile strong {
+    color: #343a40;
+}
+
+.clock {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    min-width: 60px;
+}
+
+.golayi {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.golayi-frame {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.bell-icon {
+    width: 40px;
+    height: 40px;
+    min-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    transition: 0.2s ease;
+}
+
+.bell-icon:hover {
+    transform: scale(1.1);
+}
+
+.golayi img,
+.bell-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.golayi:hover {
+    transform: scale(1.1);
+}

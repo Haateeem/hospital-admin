@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        .login-body {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+        }
+
+        .left-container {
+            background-color: #2A547E;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .left-container h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .left-container p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .signup-btn {
+            background-color: white;
+            color: #2A547E;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .right-container {
+            background-color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .right-container h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .right-container form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .right-container form input[type="text"],
+        .right-container form input[type="password"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-container .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 11px;
+            cursor: pointer;
+            font-size: 15px;
+            user-select: none;
+        }
+
+        .right-container form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2A547E;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .right-container form button:hover {
+            background-color: #1b3c5d;
+        }
+
+        .forgot-password {
+            text-align: right;
+            display: block;
+            margin-bottom: 10px;
+            color: #2A547E;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 48%;
+            color: white;
+        }
+
+        .fb-btn {
+            background-color: #3b5998;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-body">
+        <div class="left-container">
+            <h2>New here ?</h2>
+            <p>Please signup first to make bookings.</p>
+            <button class="signup-btn" onclick="signUp()">Sign up</button>
+        </div>
+        <div class="right-container">
+            <h3>Sign in</h3>
+            <form>
+                <input type="text" id="uname" placeholder="Enter Email" name="uname" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter Password" name="psw" required>
+                    <span id="togglePassword" class="eye-icon" onclick="togglePasswordVisibility()"><i id="eye-icon"
+                            class="fa-regular fa-eye"></i></span>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <button type="button" id="submitBtn" onclick="logIn()">Login</button>
+            </form>
+            <p>Or Sign in with social platforms</p>
+            <div class="social-login">
+                <button class="social-btn fb-btn">Facebook</button>
+                <button class="social-btn google-btn">Google</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Login Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Invalid email or password.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
